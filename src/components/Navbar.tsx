@@ -1,13 +1,38 @@
 import { NavbarContainer } from "../styles/Styles.modules";
+import { AppBar, Toolbar, Typography, Tab } from "@mui/material";
+
+const navLinkName = [
+  {
+    id: 1,
+    title: "Home",
+  },
+  {
+    id: 2,
+    title: "New Releases",
+  },
+  {
+    id: 3,
+    title: "Popular",
+  },
+  {
+    id: 4,
+    title: "TV Shows",
+  },
+];
+
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <h1>Movie Library</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio
-        assumenda optio vitae voluptate ratione maiores velit voluptatibus ex
-        explicabo eveniet.
-      </p>
+      <AppBar className="appBar">
+        <Toolbar className="toolBar">
+          <Typography>Movie Library</Typography>
+          <div className="navLinks">
+            {navLinkName.map((link) => (
+              <Tab label={link.title} key={link.id} />
+            ))}
+          </div>
+        </Toolbar>
+      </AppBar>
     </NavbarContainer>
   );
 };
