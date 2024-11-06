@@ -25,12 +25,13 @@ const Navbar = () => {
     <NavbarContainer>
       <AppBar className="appBar">
         <Toolbar className="toolBar">
-          <Typography>Movie Library</Typography>
+          <Typography className="navLogo">Movie Library</Typography>
           <div className="navLinks">
             {navLinkName.map((link) => (
               <Tab label={link.title} key={link.id} />
             ))}
           </div>
+          <div className="navRightBkg"></div>
         </Toolbar>
       </AppBar>
     </NavbarContainer>
