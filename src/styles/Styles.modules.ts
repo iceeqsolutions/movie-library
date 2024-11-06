@@ -60,3 +60,11 @@ export const NavbarContainer = styled.nav`
     }
   }
 `;
+
+export const ApiDataItemsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+`;
