@@ -5,26 +5,42 @@ import {
 } from "../interfaces/ApiDataInterfaces";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { CircularProgress } from "@mui/material";
 
 const ApiDataItems: React.FC<ApiDataProps> = ({
   apiEndpoint,
   numberOfRecords,
 }) => {
   const [showData, setShowData] = useState<ApiDataItemProps[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    if (!apiEndpoint) {
+      console.error("API endpoint is undefined");
+      return;
+    }
     axios
       .get(apiEndpoint)
       .then((response) => {
         setShowData(response.data.results.slice(0, numberOfRecords));
       })
+
       .catch((error) => {
         console.log(error);
       });
+    setTimeout(() => {
+      setLoading(true);
+    }, 1000);
   }, [apiEndpoint, numberOfRecords]);
 
   return (
     <ApiDataItemsContainer>
+      {!loading && (
+        <div className="loadingCircle">
+          <CircularProgress size={50} color="warning" />
+          <p>Loading...</p>
+        </div>
+      )}
       <div className="recordCard">
         {showData.map((item) => {
           return (

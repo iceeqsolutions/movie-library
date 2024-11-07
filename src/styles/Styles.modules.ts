@@ -67,4 +67,14 @@ export const ApiDataItemsContainer = styled.div`
   margin-top: 300px;
   background-color: #f5f5f5;
   border-radius: 10px;
+  .loadingCircle {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    margin-top: 100px;
+    font-size: 2rem;
+  }
 `;
