@@ -4,14 +4,10 @@ import "./styles/App.css";
 import { trending_tv_shows } from "./modules/ApiEndpoints";
 
 function App() {
-  fetch(trending_tv_shows)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-
   return (
     <>
       <Navbar />
-      <ApiDataItems />
+      <ApiDataItems apiEndpoint={trending_tv_shows} numberOfRecords={6} />
     </>
   );
 }

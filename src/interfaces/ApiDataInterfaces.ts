@@ -1,4 +1,4 @@
-export default interface ApiDataItems {
+export interface ApiDataItemProps {
   id: number;
   title: string;
   overview: string;
@@ -17,4 +17,9 @@ export default interface ApiDataItems {
   adult: boolean;
   original_title: string;
   origin_country: string[];
+}
+
+export interface ApiDataProps {
+  apiEndpoint: string;
+  numberOfRecords: number;
 }
