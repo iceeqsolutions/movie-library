@@ -31,7 +31,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
     setTimeout(() => {
       setLoading(true);
     }, 1000);
-  }, [apiEndpoint, numberOfRecords]);
+  }, [apiEndpoint, numberOfRecords, loading]);
 
   return (
     <ApiDataItemsContainer>
@@ -49,11 +49,13 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt={item.title}
               />
-              <h2>{item.title}</h2>
-              <p>{item.overview}</p>
-              <p>{item.release_date}</p>
-              <p>{item.vote_average}</p>
-              <p>{item.vote_count}</p>
+              <h2>{item.title ? item.title : item.name}</h2>
+              <p className="overview">{item.overview}</p>
+              <p>Rating: {item.vote_average}</p>
+              <p>
+                Release date:
+                {item.release_date ? item.release_date : item.first_air_date}
+              </p>
             </div>
           );
         })}

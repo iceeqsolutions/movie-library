@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <ApiDataItems apiEndpoint={trending_tv_shows} numberOfRecords={6} />
+      <ApiDataItems apiEndpoint={trending_tv_shows} numberOfRecords={12} />
     </>
   );
 }
