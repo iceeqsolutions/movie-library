@@ -43,6 +43,9 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
       )}
       <div className="recordCard">
         {showData.map((item) => {
+          const releaseYear = item.release_date
+            ? item.release_date.substring(0, 4)
+            : item.first_air_date.substring(0, 4);
           return (
             <div key={item.id} className="recordCardItem">
               <img
@@ -51,11 +54,8 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
               />
               <h2>{item.title ? item.title : item.name}</h2>
               <p className="overview">{item.overview}</p>
-              <p>Rating: {item.vote_average}</p>
-              <p>
-                Release date:
-                {item.release_date ? item.release_date : item.first_air_date}
-              </p>
+              <p>Rating: {item.vote_average.toFixed(1)}</p>
+              <p>Release year: {releaseYear}</p>
             </div>
           );
         })}
