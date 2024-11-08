@@ -1,13 +1,22 @@
 import Navbar from "./components/Navbar";
 import ApiDataItems from "./components/ApiDataItems";
 import "./styles/App.css";
-import { trending_movies } from "./modules/ApiEndpoints";
+import { upcoming_movies, top_rated_movies } from "./modules/ApiEndpoints";
 
 function App() {
   return (
     <>
       <Navbar />
-      <ApiDataItems apiEndpoint={trending_movies} numberOfRecords={20} />
+      <ApiDataItems
+        sectionHeader="UPCOMING MOVIES"
+        apiEndpoint={upcoming_movies}
+        numberOfRecords={4}
+      />
+      <ApiDataItems
+        sectionHeader="TOP-RATED MOVIES"
+        apiEndpoint={top_rated_movies}
+        numberOfRecords={12}
+      />
     </>
   );
 }

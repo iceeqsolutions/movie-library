@@ -83,12 +83,34 @@ export const ApiDataItemsContainer = styled.div`
   .loadingCircle {
     display: flex;
     justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(3, 40, 65, 0.4);
+    > p {
+      font-family: "MovieDescription";
+      font-size: 2rem;
+      letter-spacing: 2px;
+      padding-top: 10px;
+    }
+  }
+  .section {
+    font-family: "LinksFont";
+    padding-bottom: 50px;
+    > h1 {
+      color: #a87d32;
+      text-shadow: 0 0 1px #fff;
+      letter-spacing: 2px;
+      font-size: 2.4rem;
+      font-weight: 200;
+      padding: 20px 50px;
+    }
   }
   .recordCard {
     display: flex;
@@ -106,6 +128,7 @@ export const ApiDataItemsContainer = styled.div`
     box-shadow: 0 0 10px 5px #222;
     background-color: #333;
     width: 290px;
+    transition: all 0.5s ease-in-out;
     img {
       width: 250px;
       height: 350px;
@@ -113,12 +136,20 @@ export const ApiDataItemsContainer = styled.div`
       border-radius: 10px;
       box-shadow: 0 0 10px 10px #fff;
     }
+
     h2 {
       padding-top: 10px;
       color: #fff;
-      font-family: "ApiDataRecord";
+      /* ApiDataRecord doesn't support ellipsis, therefore removed */
+      /* font-family: "ApiDataRecord"; */
       letter-spacing: 1px;
-      font-size: 2rem;
+      font-size: 1.7rem;
+      font-weight: 400;
+      width: 250px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     p {
       font-family: "MovieDescription";
@@ -139,5 +170,17 @@ export const ApiDataItemsContainer = styled.div`
       scrollbar-width: none;
       scrollbar-color: #a87d32 #bbb;
     }
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+  .rating {
+    border: 4px solid #6b5716;
+    border-radius: 50%;
+    background-color: #a87d32;
+    padding: 10px 12px;
+    color: #fff;
+    font-weight: 600;
   }
 `;

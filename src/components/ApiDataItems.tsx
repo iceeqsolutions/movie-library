@@ -10,6 +10,7 @@ import { CircularProgress } from "@mui/material";
 const ApiDataItems: React.FC<ApiDataProps> = ({
   apiEndpoint,
   numberOfRecords,
+  sectionHeader,
 }) => {
   const [showData, setShowData] = useState<ApiDataItemProps[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -37,28 +38,35 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
     <ApiDataItemsContainer>
       {!loading && (
         <div className="loadingCircle">
-          <CircularProgress size={50} color="warning" />
+          <CircularProgress size={70} color="warning" />
           <p>Loading...</p>
         </div>
       )}
-      <div className="recordCard">
-        {showData.map((item) => {
-          const releaseYear = item.release_date
-            ? item.release_date.substring(0, 4)
-            : item.first_air_date.substring(0, 4);
-          return (
-            <div key={item.id} className="recordCardItem">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                alt={item.title}
-              />
-              <h2>{item.title ? item.title : item.name}</h2>
-              <p className="overview">{item.overview}</p>
-              <p>Rating: {item.vote_average.toFixed(1)}</p>
-              <p>Release year: {releaseYear}</p>
-            </div>
-          );
-        })}
+      <div className="section">
+        <h1>{sectionHeader}</h1>
+
+        <div className="recordCard">
+          {showData.map((item) => {
+            const releaseYear = item.release_date
+              ? item.release_date.substring(0, 4)
+              : item.first_air_date.substring(0, 4);
+            return (
+              <div key={item.id} className="recordCardItem">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                  alt={item.title}
+                />
+                <h2>{item.title ? item.title : item.name}</h2>
+                <p className="overview">{item.overview}</p>
+                <p>
+                  Rating:{" "}
+                  <span className="rating">{item.vote_average.toFixed(1)}</span>
+                </p>
+                <p>Release year: {releaseYear}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </ApiDataItemsContainer>
   );
