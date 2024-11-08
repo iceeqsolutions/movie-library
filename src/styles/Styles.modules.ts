@@ -183,4 +183,44 @@ export const ApiDataItemsContainer = styled.div`
     color: #fff;
     font-weight: 600;
   }
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .scrollContainer {
+    display: flex;
+    width: 100vw;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    > .scrollingWrapper {
+      display: flex;
+      animation: RightToLeft 60s infinite linear;
+
+      > .card {
+        flex: 0 0 auto;
+        padding: 5px;
+
+        transition: scale 0.5s ease-in-out;
+        > img {
+          height: 400px;
+          border: 2px solid #a87d32;
+          border-radius: 10px;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+          }
+        }
+        @keyframes RightToLeft {
+          from {
+            transform: translateX(0%);
+          }
+          to {
+            transform: translateX(-70vw);
+          }
+        }
+      }
+    }
+  }
 `;
