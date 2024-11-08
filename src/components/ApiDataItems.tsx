@@ -14,6 +14,8 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
 }) => {
   const [showData, setShowData] = useState<ApiDataItemProps[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(1);
 
   useEffect(() => {
     if (!apiEndpoint) {
@@ -21,8 +23,9 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
       return;
     }
     axios
-      .get(apiEndpoint)
+      .get(`${apiEndpoint}&page=${page}`)
       .then((response) => {
+        setTotalPages(response.data.total_pages);
         setShowData(response.data.results.slice(0, numberOfRecords));
       })
 
@@ -32,7 +35,19 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
     setTimeout(() => {
       setLoading(true);
     }, 1000);
-  }, [apiEndpoint, numberOfRecords, loading]);
+  }, [apiEndpoint, numberOfRecords, loading, page]);
+
+  function prevPage() {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  }
+
+  function nextPage() {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  }
 
   return (
     <ApiDataItemsContainer>
@@ -66,6 +81,14 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
               </div>
             );
           })}
+        </div>
+        <div className="navigationButtons">
+          <button className="btnNext" onClick={prevPage}>
+            Prev Page
+          </button>
+          <button className="btnNext" onClick={nextPage}>
+            Next Page
+          </button>
         </div>
       </div>
     </ApiDataItemsContainer>
