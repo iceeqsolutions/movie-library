@@ -1,15 +1,15 @@
 import ApiDataItems from "../components/ApiDataItems";
-import { top_rated_movies } from "../modules/ApiEndpoints";
+import { trending_movies } from "../modules/ApiEndpoints";
 
 const Home = () => {
   return (
     <>
       <ApiDataItems
-        sectionHeader="TOP RATED MOVIES"
-        apiEndpoint={top_rated_movies}
-        numberOfRecords={12}
+        sectionHeader="10000+ MOVIES AND TV SHOWS"
+        apiEndpoint={trending_movies}
+        numberOfRecords={0}
+        imgSrc="src/assets/starWarsPoster.png"
       />
-      <div>Home</div>;
     </>
   );
 };

@@ -12,6 +12,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
   apiEndpoint,
   numberOfRecords,
   sectionHeader,
+  imgSrc,
 }) => {
   const [showData, setShowData] = useState<ApiDataItemProps[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -69,7 +70,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
       )}
       <div className="mainContainer">
         <div className="scrollContainer">
-          <h2>Featured</h2>
+          {/* <h2>Featured</h2> */}
           <div className="scrollingWrapper">
             {featured.map((item) => {
               return (
@@ -84,10 +85,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
           </div>
         </div>
 
-        <SectionBanner
-          imgSrc="src/assets/movieReels.jpg"
-          sectionHeader={sectionHeader}
-        />
+        {<SectionBanner imgSrc={imgSrc} sectionHeader={sectionHeader} />}
 
         <div className="section">
           {/* <h2>{sectionHeader}</h2> */}
@@ -117,25 +115,25 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
             })}
           </div>
           <div className="navigationButtons">
-            {page == 1 && (
+            {page == 1 && numberOfRecords > 0 && (
               <button className="btnPrevDisable" onClick={prevPage}>
                 Prev Page
               </button>
             )}
-            {page > 1 && (
+            {page > 1 && numberOfRecords > 0 && (
               <button className="btnPrev" onClick={prevPage}>
                 Prev Page{" "}
               </button>
             )}
             <div className="pageNumber">
-              <p>Page - {page}</p>
+              {numberOfRecords > 0 && <p>Page - {page}</p>}
             </div>
-            {page < totalPages && (
+            {page < totalPages && numberOfRecords > 0 && (
               <button className="btnNext" onClick={nextPage}>
                 Next Page
               </button>
             )}
-            {page == totalPages && (
+            {page == totalPages && numberOfRecords > 0 && (
               <button className="btnNextDisable" onClick={nextPage}>
                 Next Page
               </button>

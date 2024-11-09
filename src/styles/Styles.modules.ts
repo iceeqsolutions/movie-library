@@ -196,12 +196,11 @@ export const ApiDataItemsContainer = styled.div`
     margin: 5px 0 10px 0;
     flex-wrap: nowrap;
     overflow: hidden;
-    > h2 {
+    /*     > h2 {
       position: absolute;
       z-index: 1;
-      top: 300px;
+      top: 260px;
       left: 0;
-      /* font-family: "LinksFont"; */
       font-family: "MovieDescription";
       color: #fff;
       background-color: rgba(0, 0, 0, 0.7);
@@ -211,7 +210,7 @@ export const ApiDataItemsContainer = styled.div`
       letter-spacing: 2px;
       font-size: 1.4rem;
       font-weight: 200;
-    }
+    } */
     > .scrollingWrapper {
       display: flex;
       animation: RightToLeft 30s infinite linear alternate;
@@ -222,7 +221,8 @@ export const ApiDataItemsContainer = styled.div`
 
         transition: scale 0.5s ease-in-out;
         > img {
-          height: 400px;
+          height: 15vw;
+          min-height: 300px;
           border: 2px solid #a87d32;
           border-radius: 10px;
           &:hover {

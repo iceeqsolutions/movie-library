@@ -23,4 +23,5 @@ export interface ApiDataProps {
   apiEndpoint: string;
   numberOfRecords: number;
   sectionHeader: string;
+  imgSrc: string;
 }
