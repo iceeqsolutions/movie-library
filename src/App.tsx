@@ -1,17 +1,14 @@
 import Navbar from "./components/Navbar";
-import ApiDataItems from "./components/ApiDataItems";
+
 import "./styles/App.css";
-import { top_rated_movies } from "./modules/ApiEndpoints";
+
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
       <Navbar />
-      <ApiDataItems
-        sectionHeader="UPCOMING MOVIES"
-        apiEndpoint={top_rated_movies}
-        numberOfRecords={12}
-      />
+      <Home />
     </>
   );
 }
