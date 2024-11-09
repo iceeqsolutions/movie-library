@@ -193,7 +193,7 @@ export const ApiDataItemsContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 20px;
+    margin: 5px 0 10px 0;
     flex-wrap: nowrap;
     overflow: hidden;
     > h2 {
@@ -201,14 +201,15 @@ export const ApiDataItemsContainer = styled.div`
       z-index: 1;
       top: 300px;
       left: 0;
-      font-family: "LinksFont";
+      /* font-family: "LinksFont"; */
+      font-family: "MovieDescription";
       color: #fff;
       background-color: rgba(0, 0, 0, 0.7);
       padding: 10px 30px 10px 50px;
       border-radius: 0 30px 30px 0;
       text-shadow: 0 0 1px #fff;
       letter-spacing: 2px;
-      font-size: 2.4rem;
+      font-size: 1.4rem;
       font-weight: 200;
     }
     > .scrollingWrapper {
@@ -277,5 +278,34 @@ export const ApiDataItemsContainer = styled.div`
       color: #ddd;
       padding: 0 30px;
     }
+  }
+`;
+
+export const SectionBannerContainer = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  > .sectionHeader {
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* font-family: "LinksFont"; */
+    font-family: "MovieDescription";
+    font-size: 6rem;
+    letter-spacing: 10px;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  > .sectionBannerImg {
+    width: 70vw;
+    max-height: 500px;
+    object-fit: cover;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
   }
 `;

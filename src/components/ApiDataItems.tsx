@@ -6,6 +6,7 @@ import {
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
+import SectionBanner from "./SectionBanner";
 
 const ApiDataItems: React.FC<ApiDataProps> = ({
   apiEndpoint,
@@ -68,7 +69,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
       )}
       <div className="mainContainer">
         <div className="scrollContainer">
-          <h2>FEATURED MOVIES</h2>
+          <h2>Featured</h2>
           <div className="scrollingWrapper">
             {featured.map((item) => {
               return (
@@ -83,8 +84,13 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
           </div>
         </div>
 
+        <SectionBanner
+          imgSrc="src/assets/movieReels.jpg"
+          sectionHeader={sectionHeader}
+        />
+
         <div className="section">
-          <h2>{sectionHeader}</h2>
+          {/* <h2>{sectionHeader}</h2> */}
 
           <div className="recordCard">
             {showData.map((item) => {
