@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import ApiDataItems from "./components/ApiDataItems";
 import "./styles/App.css";
-import { upcoming_movies } from "./modules/ApiEndpoints";
+import { top_rated_movies } from "./modules/ApiEndpoints";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <ApiDataItems
         sectionHeader="UPCOMING MOVIES"
-        apiEndpoint={upcoming_movies}
+        apiEndpoint={top_rated_movies}
         numberOfRecords={12}
       />
     </>

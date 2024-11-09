@@ -103,7 +103,7 @@ export const ApiDataItemsContainer = styled.div`
   .section {
     font-family: "LinksFont";
     padding-bottom: 50px;
-    > h1 {
+    > h2 {
       color: #a87d32;
       text-shadow: 0 0 1px #fff;
       letter-spacing: 2px;
@@ -137,7 +137,7 @@ export const ApiDataItemsContainer = styled.div`
       box-shadow: 0 0 10px 10px #fff;
     }
 
-    h2 {
+    h3 {
       padding-top: 10px;
       color: #fff;
       /* ApiDataRecord doesn't support ellipsis, therefore removed */
@@ -185,18 +185,35 @@ export const ApiDataItemsContainer = styled.div`
   }
   .mainContainer {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
   .scrollContainer {
     display: flex;
-    width: 100vw;
+    flex-direction: column;
+    width: 100%;
     margin-top: 20px;
     flex-wrap: nowrap;
     overflow: hidden;
+    > h2 {
+      position: absolute;
+      z-index: 1;
+      top: 300px;
+      left: 0;
+      font-family: "LinksFont";
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 30px 10px 50px;
+      border-radius: 0 30px 30px 0;
+      text-shadow: 0 0 1px #fff;
+      letter-spacing: 2px;
+      font-size: 2.4rem;
+      font-weight: 200;
+    }
     > .scrollingWrapper {
       display: flex;
-      animation: RightToLeft 60s infinite linear;
+      animation: RightToLeft 30s infinite linear alternate;
 
       > .card {
         flex: 0 0 auto;
@@ -217,10 +234,48 @@ export const ApiDataItemsContainer = styled.div`
             transform: translateX(0%);
           }
           to {
-            transform: translateX(-70vw);
+            transform: translateX(-100vw);
           }
         }
       }
+    }
+  }
+  .navigationButtons {
+    display: flex;
+    justify-content: center;
+    > button {
+      /* font-family: "LinksFont"; */
+      font-family: "MovieDescription";
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #a87d32;
+      color: #fff;
+      &:hover {
+        cursor: pointer;
+        background-color: #6b5716;
+      }
+    }
+    > .btnPrevDisable,
+    .btnNextDisable {
+      background-color: #444;
+      color: #888;
+      &:hover {
+        cursor: not-allowed;
+        background-color: #444;
+      }
+    }
+    > .pageNumber {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* font-family: "LinksFont"; */
+      font-family: "MovieDescription";
+      font-size: 1.5rem;
+      color: #ddd;
+      padding: 0 30px;
     }
   }
 `;

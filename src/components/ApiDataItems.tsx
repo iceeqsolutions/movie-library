@@ -68,6 +68,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
       )}
       <div className="mainContainer">
         <div className="scrollContainer">
+          <h2>FEATURED MOVIES</h2>
           <div className="scrollingWrapper">
             {featured.map((item) => {
               return (
@@ -83,7 +84,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
         </div>
 
         <div className="section">
-          <h1>{sectionHeader}</h1>
+          <h2>{sectionHeader}</h2>
 
           <div className="recordCard">
             {showData.map((item) => {
@@ -96,7 +97,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
                     src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                     alt={item.title}
                   />
-                  <h2>{item.title ? item.title : item.name}</h2>
+                  <h3>{item.title ? item.title : item.name}</h3>
                   <p className="overview">{item.overview}</p>
                   <p>
                     Rating:{" "}
@@ -110,12 +111,29 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
             })}
           </div>
           <div className="navigationButtons">
-            <button className="btnNext" onClick={prevPage}>
-              Prev Page
-            </button>
-            <button className="btnNext" onClick={nextPage}>
-              Next Page
-            </button>
+            {page == 1 && (
+              <button className="btnPrevDisable" onClick={prevPage}>
+                Prev Page
+              </button>
+            )}
+            {page > 1 && (
+              <button className="btnPrev" onClick={prevPage}>
+                Prev Page{" "}
+              </button>
+            )}
+            <div className="pageNumber">
+              <p>Page - {page}</p>
+            </div>
+            {page < totalPages && (
+              <button className="btnNext" onClick={nextPage}>
+                Next Page
+              </button>
+            )}
+            {page == totalPages && (
+              <button className="btnNextDisable" onClick={nextPage}>
+                Next Page
+              </button>
+            )}
           </div>
         </div>
       </div>
