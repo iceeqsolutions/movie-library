@@ -1,12 +1,12 @@
 import ApiDataItems from "../components/ApiDataItems";
-import { popular_movies } from "../modules/ApiEndpoints";
+import { PopularProps } from "../interfaces/PageInterfaces";
 
-const Popular = () => {
+const Popular: React.FC<PopularProps> = ({ apiEndpoint }) => {
   return (
     <>
       <ApiDataItems
         sectionHeader="POPULAR MOVIES"
-        apiEndpoint={popular_movies}
+        apiEndpoint={apiEndpoint}
         numberOfRecords={12}
         imgSrc="src/assets/popcorns.jpg"
       />

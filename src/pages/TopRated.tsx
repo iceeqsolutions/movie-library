@@ -1,12 +1,12 @@
 import ApiDataItems from "../components/ApiDataItems";
-import { top_rated_movies } from "../modules/ApiEndpoints";
+import { TopRatedProps } from "../interfaces/PageInterfaces";
 
-const TopRated = () => {
+const TopRated: React.FC<TopRatedProps> = ({ apiEndpoint }) => {
   return (
     <>
       <ApiDataItems
         sectionHeader="TOP RATED MOVIES"
-        apiEndpoint={top_rated_movies}
+        apiEndpoint={apiEndpoint}
         numberOfRecords={12}
         imgSrc="src/assets/movieReels.jpg"
       />

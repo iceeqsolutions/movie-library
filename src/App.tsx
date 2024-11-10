@@ -1,5 +1,11 @@
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
+import {
+  trending_movies,
+  popular_movies,
+  top_rated_movies,
+  top_rated_tv_shows,
+} from "./modules/ApiEndpoints";
 
 import "./styles/App.css";
 
@@ -13,10 +19,19 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/popular-movies" element={<Popular />} />
-        <Route path="/top-rated-movies" element={<TopRated />} />
-        <Route path="/tv-shows" element={<TvShows />} />
+        <Route path="/" element={<Home apiEndpoint={trending_movies} />} />
+        <Route
+          path="/popular-movies"
+          element={<Popular apiEndpoint={popular_movies} />}
+        />
+        <Route
+          path="/top-rated-movies"
+          element={<TopRated apiEndpoint={top_rated_movies} />}
+        />
+        <Route
+          path="/tv-shows"
+          element={<TvShows apiEndpoint={top_rated_tv_shows} />}
+        />
       </Routes>
     </>
   );

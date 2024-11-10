@@ -36,8 +36,8 @@ const Navbar = () => {
           <div className="navigation">
             <div className="navLinks">
               {navLinkName.map((link) => (
-                <NavLink to={link.link}>
-                  <Tab label={link.title} key={link.id} />
+                <NavLink to={link.link} key={link.id}>
+                  <Tab label={link.title} />
                 </NavLink>
               ))}
             </div>
