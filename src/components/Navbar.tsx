@@ -1,22 +1,28 @@
 import { NavbarContainer } from "../styles/Styles.modules";
 import { AppBar, Toolbar, Typography, Tab } from "@mui/material";
+// import { link } from "fs";
+import { NavLink } from "react-router-dom";
 
 const navLinkName = [
   {
     id: 1,
     title: "Home",
+    link: "/",
   },
   {
     id: 2,
     title: "Popular",
+    link: "/popular-movies",
   },
   {
     id: 3,
     title: "Top Rated",
+    link: "/top-rated-movies",
   },
   {
     id: 4,
     title: "TV Shows",
+    link: "/tv-shows",
   },
 ];
 
@@ -28,7 +34,9 @@ const Navbar = () => {
           <Typography className="navLogo">Movie Library</Typography>
           <div className="navLinks">
             {navLinkName.map((link) => (
-              <Tab label={link.title} key={link.id} />
+              <NavLink to={link.link}>
+                <Tab label={link.title} key={link.id} />
+              </NavLink>
             ))}
           </div>
           <div className="navRightBkg"></div>
