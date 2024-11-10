@@ -8,11 +8,11 @@ const navLinkName = [
   },
   {
     id: 2,
-    title: "New Releases",
+    title: "Popular",
   },
   {
     id: 3,
-    title: "Popular",
+    title: "Top Rated",
   },
   {
     id: 4,

@@ -3,12 +3,18 @@ import Navbar from "./components/Navbar";
 import "./styles/App.css";
 
 import Home from "./pages/Home";
+// import Popular from "./pages/Popular";
+// import TopRated from "./pages/TopRated";
+// import TvShows from "./pages/TvShows";
 
 function App() {
   return (
     <>
       <Navbar />
       <Home />
+      {/* <Popular /> */}
+      {/* <TopRated /> */}
+      {/* <TvShows /> */}
     </>
   );
 }
