@@ -40,13 +40,20 @@ export const NavbarContainer = styled.nav`
         align-items: flex-start;
         margin: 20px auto;
         height: 200px;
-
-        > .MuiTab-root {
-          font-family: "LinksFont";
-          font-size: 1.5rem;
-          &:hover {
-            background-color: #444;
-            border-radius: 10px;
+        > .active {
+          background-color: #a87d32;
+          border-radius: 10px;
+        }
+        > a {
+          text-decoration: none;
+          color: #fff;
+          > .MuiTab-root {
+            font-family: "LinksFont";
+            font-size: 1.5rem;
+            &:hover {
+              background-color: #444;
+              border-radius: 10px;
+            }
           }
         }
       }
