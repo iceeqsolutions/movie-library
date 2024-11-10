@@ -1,20 +1,23 @@
 import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
 
 import "./styles/App.css";
 
 import Home from "./pages/Home";
-// import Popular from "./pages/Popular";
-// import TopRated from "./pages/TopRated";
-// import TvShows from "./pages/TvShows";
+import Popular from "./pages/Popular";
+import TopRated from "./pages/TopRated";
+import TvShows from "./pages/TvShows";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Home />
-      {/* <Popular /> */}
-      {/* <TopRated /> */}
-      {/* <TvShows /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/popular-movies" element={<Popular />} />
+        <Route path="/top-rated-movies" element={<TopRated />} />
+        <Route path="/tv-shows" element={<TvShows />} />
+      </Routes>
     </>
   );
 }
