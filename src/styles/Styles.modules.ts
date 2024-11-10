@@ -34,25 +34,31 @@ export const NavbarContainer = styled.nav`
         padding-left: 50px;
         min-width: 350px;
       }
-
-      > .navLinks {
+      > .navigation {
         display: flex;
-        align-items: flex-start;
-        margin: 20px auto;
-        height: 200px;
-        > .active {
-          background-color: #a87d32;
-          border-radius: 10px;
-        }
-        > a {
-          text-decoration: none;
-          color: #fff;
-          > .MuiTab-root {
-            font-family: "LinksFont";
-            font-size: 1.5rem;
-            &:hover {
-              background-color: #444;
-              border-radius: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 250px;
+        > .navLinks {
+          display: flex;
+          align-items: flex-start;
+          margin: 20px auto;
+          height: 100px;
+          > .active {
+            background-color: #a87d32;
+            border-radius: 10px;
+          }
+          > a {
+            text-decoration: none;
+            color: #fff;
+            > .MuiTab-root {
+              font-family: "LinksFont";
+              font-size: 1.5rem;
+              &:hover {
+                background-color: #444;
+                border-radius: 10px;
+              }
             }
           }
         }
