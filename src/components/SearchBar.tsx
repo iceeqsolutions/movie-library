@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 
-const SearchBar = () => {
+interface SearchBarProps {
+  searchTermsChange: (terms: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ searchTermsChange }) => {
   const [searchTerms, setSearchTerms] = useState("");
 
-  useEffect(() => {}, [searchTerms]);
+  useEffect(() => {
+    searchTermsChange(searchTerms);
+  }, [searchTerms, searchTermsChange]);
 
   function addSearchTerms(evt: React.ChangeEvent<HTMLInputElement>) {
     setSearchTerms(evt.target.value);

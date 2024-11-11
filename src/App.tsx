@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import {
@@ -15,9 +16,16 @@ import TopRated from "./pages/TopRated";
 import TvShows from "./pages/TvShows";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const handleSearchTermsChange = (terms: string) => {
+    setSearchTerm(terms);
+  };
+
+  console.log(searchTerm);
+
   return (
     <>
-      <Navbar />
+      <Navbar onSearchTermsChange={handleSearchTermsChange} />
       <Routes>
         <Route path="/" element={<Home apiEndpoint={trending_movies} />} />
         <Route
