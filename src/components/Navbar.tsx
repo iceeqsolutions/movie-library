@@ -29,9 +29,13 @@ const navLinkName = [
 
 interface NavbarProps {
   onSearchTermsChange: (terms: string) => void;
+  handleClick: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onSearchTermsChange }) => {
+const Navbar: React.FC<NavbarProps> = ({
+  onSearchTermsChange,
+  handleClick,
+}) => {
   return (
     <NavbarContainer>
       <AppBar className="appBar">
@@ -45,7 +49,10 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchTermsChange }) => {
                 </NavLink>
               ))}
             </div>
-            <SearchBar searchTermsChange={onSearchTermsChange} />
+            <SearchBar
+              searchTermsChange={onSearchTermsChange}
+              handleClick={handleClick}
+            />
           </div>
           <div className="navRightBkg"></div>
         </Toolbar>

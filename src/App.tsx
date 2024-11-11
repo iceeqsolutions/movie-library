@@ -21,11 +21,16 @@ function App() {
     setSearchTerm(terms);
   };
 
-  console.log(searchTerm);
+  const handleClick = () => {
+    console.log(searchTerm);
+  };
 
   return (
     <>
-      <Navbar onSearchTermsChange={handleSearchTermsChange} />
+      <Navbar
+        onSearchTermsChange={handleSearchTermsChange}
+        handleClick={handleClick}
+      />
       <Routes>
         <Route path="/" element={<Home apiEndpoint={trending_movies} />} />
         <Route

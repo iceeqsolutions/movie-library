@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 
 interface SearchBarProps {
   searchTermsChange: (terms: string) => void;
+  handleClick: () => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ searchTermsChange }) => {
+const SearchBar: React.FC<SearchBarProps> = ({
+  searchTermsChange,
+  handleClick,
+}) => {
   const [searchTerms, setSearchTerms] = useState("");
 
   useEffect(() => {
@@ -15,11 +19,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTermsChange }) => {
     setSearchTerms(evt.target.value);
   }
 
-  function searchAPI() {
-    const searchString = searchTerms.split(" ").join("+");
-    console.log(searchString);
-  }
-
   return (
     <>
       <div className="searchBar">
@@ -28,7 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTermsChange }) => {
           placeholder="Search for Movies"
           onChange={addSearchTerms}
         />
-        <button onClick={searchAPI}>Search</button>
+        <button onClick={handleClick}>Search</button>
       </div>
     </>
   );
