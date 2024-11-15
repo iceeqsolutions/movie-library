@@ -8,7 +8,7 @@ import {
   top_rated_tv_shows,
 } from "./modules/ApiEndpoints";
 
-import "./styles/App.css";
+const apiKey: string = import.meta.env.VITE_API_KEY;
 
 import Home from "./pages/Home";
 import Popular from "./pages/Popular";
@@ -17,13 +17,21 @@ import TvShows from "./pages/TvShows";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [urlString, setUrlString] = useState<string>("");
   const handleSearchTermsChange = (terms: string) => {
     setSearchTerm(terms);
   };
 
   const handleClick = () => {
-    console.log(searchTerm);
+    if (searchTerm) {
+      const searchString = searchTerm.trim().split(" ").join("+");
+      const newUrlString = `https://api.themoviedb.org/3/search/movie?query=${searchString}&api_key=${apiKey}`;
+      setUrlString(newUrlString);
+      setSearchTerm("");
+    }
   };
+
+  console.log("urlString: ", urlString);
 
   return (
     <>
