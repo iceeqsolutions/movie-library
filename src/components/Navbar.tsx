@@ -24,6 +24,11 @@ const navLinkName = [
     title: "TV Shows",
     link: "/tv-shows",
   },
+  {
+    id: 5,
+    title: "Search",
+    link: "/search-results",
+  },
 ];
 
 interface NavbarProps {

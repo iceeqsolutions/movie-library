@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Popular from "./pages/Popular";
 import TopRated from "./pages/TopRated";
 import TvShows from "./pages/TvShows";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -52,6 +53,10 @@ function App() {
         <Route
           path="/tv-shows"
           element={<TvShows apiEndpoint={top_rated_tv_shows} />}
+        />
+        <Route
+          path="/search-results"
+          element={<SearchResults apiEndpoint={urlString} />}
         />
       </Routes>
     </>
