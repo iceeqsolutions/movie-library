@@ -13,3 +13,7 @@ export interface TopRatedProps {
 export interface TvShowsProps {
   apiEndpoint: string;
 }
+
+export interface SearchResultsProps {
+  apiEndpoint: string;
+}
