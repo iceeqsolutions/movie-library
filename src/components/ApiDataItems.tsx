@@ -89,9 +89,12 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
         <div className="section">
           <div className="recordCard">
             {showData.map((item) => {
-              const releaseYear = item.release_date
-                ? item.release_date.substring(0, 4)
-                : item.first_air_date.substring(0, 4);
+              const releaseYear =
+                item.release_date || item.first_air_date
+                  ? item.release_date
+                    ? item.release_date.substring(0, 4)
+                    : item.first_air_date.substring(0, 4)
+                  : "N/A";
               return (
                 <div key={item.id} className="recordCardItem">
                   <img
