@@ -16,4 +16,6 @@ export interface TvShowsProps {
 
 export interface SearchResultsProps {
   apiEndpoint: string;
+  onSearchTermsChange: (terms: string) => void;
+  handleClick: () => void;
 }

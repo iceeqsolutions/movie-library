@@ -37,8 +37,8 @@ function App() {
   return (
     <>
       <Navbar
-        onSearchTermsChange={handleSearchTermsChange}
-        handleClick={handleClick}
+      // onSearchTermsChange={handleSearchTermsChange}
+      // handleClick={handleClick}
       />
       <Routes>
         <Route path="/" element={<Home apiEndpoint={trending_movies} />} />
@@ -56,7 +56,17 @@ function App() {
         />
         <Route
           path="/search-results"
-          element={<SearchResults apiEndpoint={urlString} />}
+          element={
+            <SearchResults
+              apiEndpoint={
+                urlString
+                  ? urlString
+                  : `https://api.themoviedb.org/3/search/movie?query=&api_key=${apiKey}`
+              }
+              onSearchTermsChange={handleSearchTermsChange}
+              handleClick={handleClick}
+            />
+          }
         />
       </Routes>
     </>

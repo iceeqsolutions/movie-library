@@ -1,7 +1,7 @@
 import { NavbarContainer } from "../styles/Styles.modules";
 import { AppBar, Toolbar, Typography, Tab } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import SearchBar from "./SearchBar";
+// import SearchBar from "./SearchBar";
 
 const navLinkName = [
   {
@@ -31,7 +31,7 @@ const navLinkName = [
   },
 ];
 
-interface NavbarProps {
+/* interface NavbarProps {
   onSearchTermsChange: (terms: string) => void;
   handleClick: () => void;
 }
@@ -39,7 +39,8 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({
   onSearchTermsChange,
   handleClick,
-}) => {
+}) => { */
+const Navbar = () => {
   return (
     <NavbarContainer>
       <AppBar className="appBar">
@@ -53,10 +54,10 @@ const Navbar: React.FC<NavbarProps> = ({
                 </NavLink>
               ))}
             </div>
-            <SearchBar
+            {/*             <SearchBar
               searchTermsChange={onSearchTermsChange}
               handleClick={handleClick}
-            />
+            /> */}
           </div>
           <div className="navRightBkg"></div>
         </Toolbar>
