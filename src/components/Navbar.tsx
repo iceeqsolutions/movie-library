@@ -1,6 +1,5 @@
 import { NavbarContainer } from "../styles/Styles.modules";
 import { AppBar, Toolbar, Typography, Tab } from "@mui/material";
-// import { link } from "fs";
 import { NavLink } from "react-router-dom";
 import SearchBar from "./SearchBar";
 

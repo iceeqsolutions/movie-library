@@ -70,7 +70,6 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
       )}
       <div className="mainContainer">
         <div className="scrollContainer">
-          {/* <h2>Featured</h2> */}
           <div className="scrollingWrapper">
             {featured.map((item) => {
               return (
@@ -88,8 +87,6 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
         {<SectionBanner imgSrc={imgSrc} sectionHeader={sectionHeader} />}
 
         <div className="section">
-          {/* <h2>{sectionHeader}</h2> */}
-
           <div className="recordCard">
             {showData.map((item) => {
               const releaseYear = item.release_date

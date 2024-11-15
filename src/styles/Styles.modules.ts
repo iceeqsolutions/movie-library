@@ -153,8 +153,6 @@ export const ApiDataItemsContainer = styled.div`
     h3 {
       padding-top: 10px;
       color: #fff;
-      /* ApiDataRecord doesn't support ellipsis, therefore removed */
-      /* font-family: "ApiDataRecord"; */
       letter-spacing: 1px;
       font-size: 1.7rem;
       font-weight: 400;
@@ -209,21 +207,6 @@ export const ApiDataItemsContainer = styled.div`
     margin: 5px 0 10px 0;
     flex-wrap: nowrap;
     overflow: hidden;
-    /*     > h2 {
-      position: absolute;
-      z-index: 1;
-      top: 260px;
-      left: 0;
-      font-family: "MovieDescription";
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 30px 10px 50px;
-      border-radius: 0 30px 30px 0;
-      text-shadow: 0 0 1px #fff;
-      letter-spacing: 2px;
-      font-size: 1.4rem;
-      font-weight: 200;
-    } */
     > .scrollingWrapper {
       display: flex;
       animation: RightToLeft 30s infinite linear alternate;
@@ -258,7 +241,6 @@ export const ApiDataItemsContainer = styled.div`
     display: flex;
     justify-content: center;
     > button {
-      /* font-family: "LinksFont"; */
       font-family: "MovieDescription";
       font-size: 1.5rem;
       padding: 10px 20px;
@@ -285,7 +267,6 @@ export const ApiDataItemsContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      /* font-family: "LinksFont"; */
       font-family: "MovieDescription";
       font-size: 1.5rem;
       color: #ddd;
@@ -305,7 +286,6 @@ export const SectionBannerContainer = styled.div`
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    /* font-family: "LinksFont"; */
     font-family: "MovieDescription";
     font-size: 6rem;
     letter-spacing: 10px;

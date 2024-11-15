@@ -1,5 +1,4 @@
 import ApiDataItems from "../components/ApiDataItems";
-// import { trending_movies } from "../modules/ApiEndpoints";
 import { HomeProps } from "../interfaces/PageInterfaces";
 
 const Home: React.FC<HomeProps> = ({ apiEndpoint }) => {
