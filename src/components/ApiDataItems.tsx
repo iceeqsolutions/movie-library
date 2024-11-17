@@ -60,6 +60,8 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
     }
   }
 
+  console.log(`${apiEndpoint}&page=${page}`);
+
   return (
     <ApiDataItemsContainer>
       {!loading && (
@@ -77,6 +79,11 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
                   <img
                     src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                     alt={item.title}
+                    onClick={() => {
+                      console.log(
+                        `https://api.themoviedb.org/3/movie/${item.id}?&append_to_response=videos&api_key=0ff9c403418e9ae2aafb5970291559c8`
+                      );
+                    }}
                   />
                 </div>
               );
