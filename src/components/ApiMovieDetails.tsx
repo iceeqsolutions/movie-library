@@ -125,8 +125,10 @@ const ApiMovieDetails: React.FC<ApiDataProps> = ({ apiEndpoint }) => {
                 </p>
               </div>
               <div className="right">
-                <p>Movie budget: ${showData.budget}</p>
-                <p>Generated revenue: ${showData.revenue}</p>
+                <p>Movie budget: ${showData.budget.toLocaleString("en-US")}</p>
+                <p>
+                  Generated revenue: ${showData.revenue.toLocaleString("en-US")}
+                </p>
               </div>
             </div>
           </div>

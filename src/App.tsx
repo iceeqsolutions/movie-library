@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import {
   trending_movies,
@@ -11,6 +10,7 @@ import {
 
 const apiKey: string = import.meta.env.VITE_API_KEY;
 
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Popular from "./pages/Popular";
 import TopRated from "./pages/TopRated";
@@ -18,6 +18,7 @@ import TvShows from "./pages/TvShows";
 import SearchResults from "./pages/SearchResults";
 import MovieDetails from "./pages/MovieDetails";
 import NewReleases from "./pages/NewReleases";
+import Footnote from "./components/Footnote";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -72,6 +73,7 @@ function App() {
           }
         />
       </Routes>
+      <Footnote />
     </>
   );
 }
