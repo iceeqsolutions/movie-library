@@ -6,6 +6,7 @@ import {
   popular_movies,
   top_rated_movies,
   top_rated_tv_shows,
+  upcoming_movies,
 } from "./modules/ApiEndpoints";
 
 const apiKey: string = import.meta.env.VITE_API_KEY;
@@ -16,6 +17,7 @@ import TopRated from "./pages/TopRated";
 import TvShows from "./pages/TvShows";
 import SearchResults from "./pages/SearchResults";
 import MovieDetails from "./pages/MovieDetails";
+import NewReleases from "./pages/NewReleases";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -49,6 +51,10 @@ function App() {
         <Route
           path="/tv-shows"
           element={<TvShows apiEndpoint={top_rated_tv_shows} />}
+        />
+        <Route
+          path="/new-releases"
+          element={<NewReleases apiEndpoint={upcoming_movies} />}
         />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route

@@ -14,6 +14,10 @@ export interface TvShowsProps {
   apiEndpoint: string;
 }
 
+export interface UpcomingMoviesProps {
+  apiEndpoint: string;
+}
+
 export interface SearchResultsProps {
   apiEndpoint: string;
   onSearchTermsChange: (terms: string) => void;

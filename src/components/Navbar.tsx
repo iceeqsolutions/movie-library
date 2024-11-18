@@ -19,13 +19,18 @@ const navLinkName = [
     title: "Top Rated",
     link: "/top-rated-movies",
   },
-  {
+  /*   {
     id: 4,
     title: "TV Shows",
     link: "/tv-shows",
-  },
+  }, */
   {
     id: 5,
+    title: "New Releases",
+    link: "/new-releases",
+  },
+  {
+    id: 6,
     title: "Search",
     link: "/search-results",
   },
