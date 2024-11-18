@@ -15,6 +15,7 @@ import Popular from "./pages/Popular";
 import TopRated from "./pages/TopRated";
 import TvShows from "./pages/TvShows";
 import SearchResults from "./pages/SearchResults";
+import MovieDetails from "./pages/MovieDetails";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -32,14 +33,9 @@ function App() {
     }
   };
 
-  console.log("urlString: ", urlString);
-
   return (
     <>
-      <Navbar
-      // onSearchTermsChange={handleSearchTermsChange}
-      // handleClick={handleClick}
-      />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home apiEndpoint={trending_movies} />} />
         <Route
@@ -54,6 +50,7 @@ function App() {
           path="/tv-shows"
           element={<TvShows apiEndpoint={top_rated_tv_shows} />}
         />
+        <Route path="/movie/:id" element={<MovieDetails />} />
         <Route
           path="/search-results"
           element={

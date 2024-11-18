@@ -4,6 +4,7 @@ import {
   ApiDataItemProps,
 } from "../interfaces/ApiDataInterfaces";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
 import SectionBanner from "./SectionBanner";
@@ -20,6 +21,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
   const [totalPages, setTotalPages] = useState<number>(1);
   const [featured, setFeatured] = useState<ApiDataItemProps[]>([]);
   const featuredPage = 10;
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!apiEndpoint) {
@@ -60,8 +62,6 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
     }
   }
 
-  console.log(`${apiEndpoint}&page=${page}`);
-
   return (
     <ApiDataItemsContainer>
       {!loading && (
@@ -79,11 +79,7 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
                   <img
                     src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                     alt={item.title}
-                    onClick={() => {
-                      console.log(
-                        `https://api.themoviedb.org/3/movie/${item.id}?&append_to_response=videos&api_key=0ff9c403418e9ae2aafb5970291559c8`
-                      );
-                    }}
+                    onClick={() => navigate(`/movie/${item.id}`)}
                   />
                 </div>
               );
@@ -103,7 +99,11 @@ const ApiDataItems: React.FC<ApiDataProps> = ({
                     : item.first_air_date.substring(0, 4)
                   : "N/A";
               return (
-                <div key={item.id} className="recordCardItem">
+                <div
+                  key={item.id}
+                  className="recordCardItem"
+                  onClick={() => navigate(`/movie/${item.id}`)}
+                >
                   <img
                     src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                     alt={item.title}
