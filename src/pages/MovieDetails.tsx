@@ -1,12 +1,15 @@
 import { useParams } from "react-router-dom";
+import ApiMovieDetails from "../components/ApiMovieDetails";
+const apiKey: string = import.meta.env.VITE_API_KEY;
 
 const MovieDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-
   return (
-    <div>
-      <h1>Movie Details for ID: {id}</h1>
-    </div>
+    <>
+      <ApiMovieDetails
+        apiEndpoint={`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`}
+      />
+    </>
   );
 };
 
