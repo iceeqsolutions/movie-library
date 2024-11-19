@@ -12,7 +12,7 @@ import MenuItems from "./MenuItems";
 import { NavLink } from "react-router-dom";
 
 const HamburgerMenu = () => {
-  const [open, setOpen] = useState(true); // set to false when component is ready
+  const [open, setOpen] = useState(false); // set to false when component is ready
 
   const handleSideBarMenu = () => {
     setOpen(!open);
@@ -56,6 +56,7 @@ const HamburgerMenu = () => {
           sx={{
             color: "#fff",
             marginLeft: "auto",
+            marginRight: "40px",
           }}
         >
           menu

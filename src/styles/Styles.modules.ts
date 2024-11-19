@@ -31,14 +31,15 @@ export const NavbarContainer = styled.nav`
         align-self: center;
         font-family: "MovieLibrary";
         font-size: 4.5rem;
-        padding-left: 50px;
+        padding-left: 1vw;
         min-width: 350px;
       }
       > .navigation {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        /* flex-direction: column; */
+        justify-content: end;
         align-items: center;
+        width: 100%;
         height: 250px;
         > .navLinks {
           display: flex;
@@ -62,14 +63,14 @@ export const NavbarContainer = styled.nav`
             }
           }
         }
-      }
-      > .navRightBkg {
-        width: 150px;
-        height: 150px;
-        margin: 20px 100px 0 20px;
-        background-image: url("src/assets/popcorn.png");
-        background-size: 150px;
-        background-repeat: no-repeat;
+        > .navRightBkg {
+          width: 150px;
+          height: 150px;
+          margin: 20px 4vw 0 20px;
+          background-image: url("src/assets/popcorn.png");
+          background-size: 150px;
+          background-repeat: no-repeat;
+        }
       }
     }
   }
