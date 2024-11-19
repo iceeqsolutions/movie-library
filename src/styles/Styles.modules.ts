@@ -74,6 +74,45 @@ export const NavbarContainer = styled.nav`
       }
     }
   }
+  @media (max-width: 750px) {
+    .appBar > .toolBar > .navLogo {
+      font-size: 4rem;
+      padding-left: 0;
+      min-width: 310px;
+    }
+    .appBar > .toolBar > .navigation > .navRightBkg {
+      width: 120px;
+      height: 120px;
+      margin: 20px 2vw 0 20px;
+      background-size: 120px;
+    }
+  }
+  @media (max-width: 520px) {
+    .appBar > .toolBar > .navLogo {
+      font-size: 3.5rem;
+      padding-left: 0;
+      min-width: 270px;
+    }
+    .appBar > .toolBar > .navigation > .navRightBkg {
+      width: 100px;
+      height: 100px;
+      margin: 20px 2vw 0 0;
+      background-size: 100px;
+    }
+  }
+  @media (max-width: 465px) {
+    .appBar > .toolBar > .navLogo {
+      font-size: 3.5rem;
+      padding-left: 0;
+      min-width: 270px;
+    }
+    .appBar > .toolBar > .navigation > .navRightBkg {
+      width: 0;
+      height: 0;
+      margin: 0;
+      background-size: 0px;
+    }
+  }
 `;
 
 export const ApiDataItemsContainer = styled.div`
@@ -345,7 +384,7 @@ export const SearchBarContainer = styled.div`
 `;
 
 export const MovieDetailsContainer = styled.div`
-  @font-face {
+  /*   @font-face {
     font-family: "ApiDataRecord";
     src: url("src/assets/GomariceCurryBread.ttf") format("truetype");
     font-weight: 400;
@@ -356,9 +395,10 @@ export const MovieDetailsContainer = styled.div`
     src: url("src/assets/AshemarkRegular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
-  }
+  } */
   display: flex;
   justify-content: center;
+  width: 100%;
   margin-top: 270px;
   background-color: #111;
   border-radius: 10px;
@@ -384,13 +424,14 @@ export const MovieDetailsContainer = styled.div`
   }
   .mainContainer {
     display: flex;
-    width: 56%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
-
-    .section {
+    > .section {
       font-family: "LinksFont";
       padding-bottom: 50px;
+      width: 100%;
+      max-width: 800px;
       > h1 {
         color: #a87d32;
         text-shadow: 0 0 1px #fff;
@@ -402,23 +443,25 @@ export const MovieDetailsContainer = styled.div`
       .card {
         display: flex;
         flex-direction: column;
+        max-width: 100%;
         margin: 20px;
         border-radius: 15px;
         box-shadow: 0 0 10px 10px #fff;
         .cardTop {
           display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
           > img {
-            width: 400px;
-            height: 560px;
-            margin: 20px 10px 20px 20px;
+            margin: 40px 20px 20px 20px;
             border: 2px solid #a87d32;
+            max-width: 100%;
             border-radius: 10px;
-            /* box-shadow: 0 0 10px 10px #fff; */
           }
           > .detailsContainer {
             display: flex;
             flex-direction: column;
-            /* margin-left: 20px; */
+            max-width: 100%;
             > p {
               font-family: "MovieDescription";
               color: #ddd;
@@ -428,34 +471,36 @@ export const MovieDetailsContainer = styled.div`
             .overview {
               background-color: #222;
               color: #ddd;
-              margin: 10px 20px 20px 10px;
+              margin: 10px 20px 20px 20px;
               padding: 10px;
               border: 2px solid #a87d32;
               border-radius: 10px;
               font-size: 1.5rem;
-              width: 400px;
+              max-width: 100%;
               height: 290px;
               overflow: auto;
               scrollbar-width: none;
               scrollbar-color: #a87d32 #bbb;
             }
             .backdrop {
-              width: 420px;
-              margin: 20px 20px 10px 10px;
+              max-width: 100%;
+              margin: 10px 20px 20px 20px;
               border: 2px solid #a87d32;
               border-radius: 10px;
-              height: 225px;
+              height: auto;
             }
           }
         }
         .cardMiddle {
           display: flex;
           justify-content: space-around;
+          margin: 20px auto;
+          max-width: 100%;
           h3 {
             font-family: "MovieDescription";
             color: #ddd;
             padding: 10px;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             .rating {
               border: 4px solid #6b5716;
               border-radius: 50%;
@@ -468,23 +513,20 @@ export const MovieDetailsContainer = styled.div`
         }
         .cardBottom {
           display: flex;
+          flex-direction: column;
           justify-content: space-around;
+          max-width: 100%;
+          margin: 20px;
+          line-height: 1.5;
           padding-bottom: 60px;
           .left {
             display: flex;
             flex-direction: column;
-            /* padding: 10px;
-            h3 {
-              font-family: "MovieDescription";
-              color: #ddd;
-              padding: 10px;
-              font-size: 2.2rem;
-            } */
+            max-width: 100%;
             p {
               font-family: "MovieDescription";
               color: #ddd;
               margin: 0;
-              /* padding: 10px; */
               font-size: 1.5rem;
               a {
                 color: #a87d32;
@@ -498,18 +540,12 @@ export const MovieDetailsContainer = styled.div`
           .right {
             display: flex;
             flex-direction: column;
-            /* padding: 10px;
-            h3 {
-              font-family: "MovieDescription";
-              color: #ddd;
-              padding: 10px;
-              font-size: 2.2rem;
-            } */
+            max-width: 100%;
+            margin-top: 40px;
             p {
               font-family: "MovieDescription";
               color: #ddd;
               margin: 0;
-              /* padding: 10px; */
               font-size: 1.5rem;
             }
           }

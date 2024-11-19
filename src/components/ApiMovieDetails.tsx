@@ -96,7 +96,6 @@ const ApiMovieDetails: React.FC<ApiDataProps> = ({ apiEndpoint }) => {
               </div>
             </div>
             <div className="cardMiddle">
-              <h3>Release year: {releaseYear}</h3>
               <h3>
                 Rating:{" "}
                 <span className="rating">
@@ -106,12 +105,13 @@ const ApiMovieDetails: React.FC<ApiDataProps> = ({ apiEndpoint }) => {
             </div>
             <div className="cardBottom">
               <div className="left">
+                <p>Release year: {releaseYear}</p>
                 <p>Movie length: {showData.runtime} minutes</p>
                 <p>Movie language: {showData.original_language}</p>
                 <p>
                   Homepage:{" "}
                   <a href={showData.homepage} target="_blank">
-                    {showData.title} Official Homepage
+                    Official Homepage
                   </a>
                 </p>
                 <p>
