@@ -1,7 +1,7 @@
 import { NavbarContainer } from "../styles/Styles.modules";
 import { AppBar, Toolbar, Typography, Tab } from "@mui/material";
 import { NavLink } from "react-router-dom";
-// import SearchBar from "./SearchBar";
+import HamburgerMenu from "./HamburgerMenu";
 
 const navLinkName = [
   {
@@ -66,6 +66,7 @@ const Navbar = () => {
           </div>
           <div className="navRightBkg"></div>
         </Toolbar>
+        <HamburgerMenu />
       </AppBar>
     </NavbarContainer>
   );
