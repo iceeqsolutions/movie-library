@@ -1,4 +1,4 @@
-import { MovieDetailsContainer } from "../styles/Styles.modules";
+import { MovieDetailsContainer } from "../styles/MovieDetails.modules";
 import {
   ApiMovieItemProps,
   ApiDataProps,

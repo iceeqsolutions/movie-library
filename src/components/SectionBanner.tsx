@@ -1,5 +1,5 @@
 import { SectionBannerProps } from "../interfaces/SectionBannerInterface";
-import { SectionBannerContainer } from "../styles/Styles.modules";
+import { SectionBannerContainer } from "../styles/SectionBanner.modules";
 
 const SectionBanner: React.FC<SectionBannerProps> = ({
   imgSrc,

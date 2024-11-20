@@ -1,4 +1,4 @@
-import { NavbarContainer } from "../styles/Styles.modules";
+import { NavbarContainer } from "../styles/Navbar.modules";
 import {
   AppBar,
   Toolbar,

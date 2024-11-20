@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { SearchBarContainer } from "../styles/Styles.modules";
+import { SearchBarContainer } from "../styles/SearchBar.modules";
 
 interface SearchBarProps {
   searchTermsChange: (terms: string) => void;

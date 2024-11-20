@@ -1,4 +1,4 @@
-import { FootnoteContainer } from "../styles/Styles.modules";
+import { FootnoteContainer } from "../styles/Footnote.modules";
 import icsLogo from "../assets/iCeeqSolutionsLogo.png";
 
 const Footnote = () => {
