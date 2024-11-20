@@ -7,13 +7,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 
-/*
-Poster path - https://image.tmdb.org/t/p/w500${showData.poster_path}
-Backdrop path - https://image.tmdb.org/t/p/w500${showData.backdrop_path} 
-IMDB link - https://www.imdb.com/title/${showData.imdb_id}/
-
-*/
-
 const ApiMovieDetails: React.FC<ApiDataProps> = ({ apiEndpoint }) => {
   const [showData, setShowData] = useState<ApiMovieItemProps | null>(null);
   const [loading, setLoading] = useState(false);
@@ -26,7 +19,6 @@ const ApiMovieDetails: React.FC<ApiDataProps> = ({ apiEndpoint }) => {
     axios
       .get(`${apiEndpoint}`)
       .then((response) => {
-        // console.log(response.data);
         setShowData(response.data);
       })
 
@@ -50,16 +42,6 @@ const ApiMovieDetails: React.FC<ApiDataProps> = ({ apiEndpoint }) => {
     );
   }
 
-  /*   if (loading) {
-    return (
-      <ApiDataItemsContainer>
-        <div className="loadingCircle">
-          <CircularProgress size={70} color="warning" />
-          <p>Loading...</p>
-        </div>
-      </ApiDataItemsContainer>
-    );
-  } */
   const releaseYear =
     showData.release_date || showData.first_air_date
       ? showData.release_date

@@ -40,7 +40,6 @@ export const NavbarContainer = styled.nav`
       }
       > .navigation {
         display: flex;
-        /* flex-direction: column; */
         justify-content: end;
         align-items: center;
         width: 100%;

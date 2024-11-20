@@ -12,7 +12,7 @@ import MenuItems from "./MenuItems";
 import { NavLink } from "react-router-dom";
 
 const HamburgerMenu = () => {
-  const [open, setOpen] = useState(false); // set to false when component is ready
+  const [open, setOpen] = useState(false);
 
   const handleSideBarMenu = () => {
     setOpen(!open);

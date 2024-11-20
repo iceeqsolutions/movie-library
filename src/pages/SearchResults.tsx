@@ -1,7 +1,7 @@
 import ApiDataItems from "../components/ApiDataItems";
 import { SearchResultsProps } from "../interfaces/PageInterfaces";
 import SearchBar from "../components/SearchBar";
-import { SearchBarContainer } from "../styles/Styles.modules";
+import { SearchBarContainer } from "../styles/SearchBar.modules";
 
 const SearchResults: React.FC<SearchResultsProps> = ({
   apiEndpoint,
