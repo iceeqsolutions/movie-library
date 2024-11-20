@@ -1,50 +1,45 @@
-# React + TypeScript + Vite
+# Movie Library - a React/TypeScript Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![](./src/assets/MovieLibrary.png)
 
-Currently, two official plugins are available:
+<p align="center">
+  TypeScript Demo by <a href="https://iceeqsolutions.fi/">iCeeqSolutions</a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About
 
-## Expanding the ESLint configuration
+The Movie Library is a React/TypeScript demo project demonstrating the use of interfaces, styled modules, Material UI, page routing and the use of an API.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The navbar contain different sections to choose from - the home page, the popular movies page, the top rated movies page, new releases and a search page.
 
-- Configure the top-level `parserOptions` property like this:
+The user is able to click on either the images in the scroll bar or on the movie cards in order to view more details about the move. In addition, it is also possible to search the database for a specific movie.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+The API does contain both movies and tv shows, but to facilitate things in this project, only movies are readily available. However, the project does contain the urls to each endpoint and commented out code that can be tested in order to view tv shows as well.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Demo
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+👁️ [Live Demo](https://)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Built with
+
+- Vite
+- TypeScript
+- React
+- Styled components
+- Material UI
+- API data
+- Prettier
+
+## Features
+
+- Search functionality
+- Styled module
+- React components
+- TS interfaces
+- Routing
+- Environment variables
+
+<br/><br/>
+
+<p align="center"><a href="https://iceeqsolutions.fi/"><img height="61px" width="300px" src="./src/assets/iCS_Logo_Light.png"></a></p>
+<br/><br/>
