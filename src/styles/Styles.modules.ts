@@ -2,18 +2,18 @@ import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
   max-width: 100vw;
-  @font-face {
+  /* @font-face {
     font-family: "MovieLibrary";
     src: url("src/assets/Corleone.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
-  }
-  @font-face {
+  } */
+  /* @font-face {
     font-family: "LinksFont";
     src: url("src/assets/CorleoneDue.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
-  }
+  } */
   .appBar {
     color: white;
     height: 250px;
@@ -27,12 +27,16 @@ export const NavbarContainer = styled.nav`
       justify-content: space-between;
       width: 100%;
 
-      > .navLogo {
+      /* > .navLogo {
         align-self: center;
         font-family: "MovieLibrary";
         font-size: 4.5rem;
         padding-left: 1vw;
         min-width: 350px;
+      } */
+      > .navLogo {
+        height: 100px;
+        width: auto;
       }
       > .navigation {
         display: flex;
@@ -54,7 +58,9 @@ export const NavbarContainer = styled.nav`
             text-decoration: none;
             color: #fff;
             > .MuiTab-root {
-              font-family: "LinksFont";
+              /* font-family: "LinksFont"; */
+              font-family: "Teko", sans-serif;
+              font-optical-sizing: auto;
               font-size: 1.5rem;
               &:hover {
                 background-color: #444;
@@ -116,7 +122,7 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const ApiDataItemsContainer = styled.div`
-  @font-face {
+  /* @font-face {
     font-family: "ApiDataRecord";
     src: url("src/assets/GomariceCurryBread.ttf") format("truetype");
     font-weight: 400;
@@ -127,7 +133,7 @@ export const ApiDataItemsContainer = styled.div`
     src: url("src/assets/AshemarkRegular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
-  }
+  } */
   display: flex;
   justify-content: center;
   margin-top: 270px;
@@ -147,14 +153,18 @@ export const ApiDataItemsContainer = styled.div`
     height: 100vh;
     background-color: rgba(3, 40, 65, 0.4);
     > p {
-      font-family: "MovieDescription";
+      /* font-family: "MovieDescription"; */
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
       font-size: 2rem;
       letter-spacing: 2px;
       padding-top: 10px;
     }
   }
   .section {
-    font-family: "LinksFont";
+    /* font-family: "LinksFont"; */
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
     padding-bottom: 50px;
     > h2 {
       color: #a87d32;
@@ -203,7 +213,9 @@ export const ApiDataItemsContainer = styled.div`
       text-overflow: ellipsis;
     }
     p {
-      font-family: "MovieDescription";
+      /* font-family: "MovieDescription"; */
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
       color: #ddd;
       padding: 10px;
       font-size: 1.5rem;
@@ -281,7 +293,9 @@ export const ApiDataItemsContainer = styled.div`
     display: flex;
     justify-content: center;
     > button {
-      font-family: "MovieDescription";
+      /* font-family: "MovieDescription"; */
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
       font-size: 1.5rem;
       padding: 10px 20px;
       margin: 20px;
@@ -307,7 +321,9 @@ export const ApiDataItemsContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: "MovieDescription";
+      /* font-family: "MovieDescription"; */
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
       font-size: 1.5rem;
       color: #ddd;
       padding: 0 30px;
@@ -326,9 +342,13 @@ export const SectionBannerContainer = styled.div`
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "MovieDescription";
+    /* font-family: "MovieDescription"; */
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
     font-size: 6rem;
-    letter-spacing: 10px;
+    font-style: italic;
+    /* letter-spacing: 10px; */
     text-align: center;
     width: 100%;
     color: #fff;
@@ -359,7 +379,9 @@ export const SearchBarContainer = styled.div`
     justify-content: center;
     align-items: center;
     > input {
-      font-family: "MovieDescription";
+      /* font-family: "MovieDescription"; */
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
       font-size: 1.5rem;
       padding: 10px;
       width: 300px;
@@ -368,7 +390,9 @@ export const SearchBarContainer = styled.div`
       margin-right: 10px;
     }
     > button {
-      font-family: "MovieDescription";
+      /* font-family: "MovieDescription"; */
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
       font-size: 1.5rem;
       padding: 10px 20px;
       border: none;
@@ -416,7 +440,9 @@ export const MovieDetailsContainer = styled.div`
     height: 100vh;
     background-color: rgba(3, 40, 65, 0.4);
     > p {
-      font-family: "MovieDescription";
+      /* font-family: "MovieDescription"; */
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
       font-size: 2rem;
       letter-spacing: 2px;
       padding-top: 10px;
@@ -428,7 +454,9 @@ export const MovieDetailsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     > .section {
-      font-family: "LinksFont";
+      /* font-family: "LinksFont"; */
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
       padding-bottom: 50px;
       width: 100%;
       max-width: 800px;
@@ -437,8 +465,8 @@ export const MovieDetailsContainer = styled.div`
         text-shadow: 0 0 1px #fff;
         letter-spacing: 2px;
         font-size: 4rem;
-        font-weight: 200;
-        padding: 20px 50px;
+        font-weight: 400;
+        padding: 0 50px;
       }
       .card {
         display: flex;
@@ -463,7 +491,9 @@ export const MovieDetailsContainer = styled.div`
             flex-direction: column;
             max-width: 100%;
             > p {
-              font-family: "MovieDescription";
+              /* font-family: "MovieDescription"; */
+              font-family: "Teko", sans-serif;
+              font-optical-sizing: auto;
               color: #ddd;
               padding: 10px;
               font-size: 1.5rem;
@@ -497,7 +527,9 @@ export const MovieDetailsContainer = styled.div`
           margin: 20px auto;
           max-width: 100%;
           h3 {
-            font-family: "MovieDescription";
+            /* font-family: "MovieDescription"; */
+            font-family: "Teko", sans-serif;
+            font-optical-sizing: auto;
             color: #ddd;
             padding: 10px;
             font-size: 2.5rem;
@@ -524,7 +556,9 @@ export const MovieDetailsContainer = styled.div`
             flex-direction: column;
             max-width: 100%;
             p {
-              font-family: "MovieDescription";
+              /* font-family: "MovieDescription"; */
+              font-family: "Teko", sans-serif;
+              font-optical-sizing: auto;
               color: #ddd;
               margin: 0;
               font-size: 1.5rem;
@@ -543,7 +577,9 @@ export const MovieDetailsContainer = styled.div`
             max-width: 100%;
             margin-top: 40px;
             p {
-              font-family: "MovieDescription";
+              /* font-family: "MovieDescription"; */
+              font-family: "Teko", sans-serif;
+              font-optical-sizing: auto;
               color: #ddd;
               margin: 0;
               font-size: 1.5rem;

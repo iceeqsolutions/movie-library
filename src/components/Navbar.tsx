@@ -2,7 +2,7 @@ import { NavbarContainer } from "../styles/Styles.modules";
 import {
   AppBar,
   Toolbar,
-  Typography,
+  // Typography,
   Tab,
   useTheme,
   useMediaQuery,
@@ -19,7 +19,12 @@ const Navbar = () => {
     <NavbarContainer>
       <AppBar className="appBar">
         <Toolbar className="toolBar">
-          <Typography className="navLogo">Movie Library</Typography>
+          {/* <Typography className="navLogo">Movie Library</Typography> */}
+          <img
+            className="navLogo"
+            src="src/assets/movieLibraryLogo.png"
+            alt=""
+          />
           <div className="navigation">
             {!isMobile ? (
               <>
