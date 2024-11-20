@@ -18,7 +18,7 @@ The API does contain both movies and tv shows, but to facilitate things in this 
 
 ## Demo
 
-👁️ [Live Demo](https://)
+👁️ [Live Demo](https://movie-library.iceeqsolutions.fi/)
 
 ## Built with
 
